@@ -1,0 +1,76 @@
+{
+    "id": "/subscriptions/8be7da72-c54e-4327-8d12-477a21cc636f/resourceGroups/Ghost-Clus_group/providers/Microsoft.App/containerapps/ghost",
+    "name": "ghost",
+    "type": "Microsoft.App/containerApps",
+    "location": "Canada Central",
+    "systemData": {
+        "createdBy": "mmstiver-balla@myseneca.ca",
+        "createdByType": "User",
+        "createdAt": "2022-08-13T18:26:06.0679792",
+        "lastModifiedBy": "mmstiver-balla@myseneca.ca",
+        "lastModifiedByType": "User",
+        "lastModifiedAt": "2022-08-16T14:48:29.7587182"
+    },
+    "properties": {
+        "provisioningState": "Succeeded",
+        "managedEnvironmentId": "/subscriptions/8be7da72-c54e-4327-8d12-477a21cc636f/resourceGroups/Ghost-Clus_group/providers/Microsoft.App/managedEnvironments/managedEnvironment-GhostClusgroup-8016",
+        "outboundIpAddresses": [
+            "20.220.52.67",
+            "20.220.53.36",
+            "20.220.53.60"
+        ],
+        "latestRevisionName": "ghost--eaipn9n",
+        "latestRevisionFqdn": "ghost--eaipn9n.kinddune-5cab8e4d.canadacentral.azurecontainerapps.io",
+        "customDomainVerificationId": "2AB215EF8DBEDD036B5C3C26EB37E91A6F1698B47521B12FB40D3A9EC788FE72",
+        "configuration": {
+            "secrets": [
+                {
+                    "name": "reg-pswd-88be42e9-8902"
+                }
+            ],
+            "activeRevisionsMode": "Multiple",
+            "ingress": {
+                "fqdn": "ghost.kinddune-5cab8e4d.canadacentral.azurecontainerapps.io",
+                "external": true,
+                "targetPort": 2368,
+                "transport": "Auto",
+                "traffic": [
+                    {
+                        "revisionName": "ghost--5r6oh4c",
+                        "weight": 100
+                    }
+                ],
+                "allowInsecure": false
+            },
+            "registries": [
+                {
+                    "server": "ghostconstainerregistry.azurecr.io",
+                    "username": "GhostConstainerRegistry",
+                    "passwordSecretRef": "reg-pswd-88be42e9-8902"
+                }
+            ]
+        },
+        "template": {
+            "revisionSuffix": "",
+            "containers": [
+                {
+                    "image": "ghostconstainerregistry.azurecr.io/main:latest",
+                    "name": "ghost-cms",
+                    "resources": {
+                        "cpu": 0.25,
+                        "memory": "0.5Gi",
+                        "ephemeralStorage": ""
+                    },
+                    "probes": []
+                }
+            ],
+            "scale": {
+                "minReplicas": 1,
+                "maxReplicas": 10
+            }
+        }
+    },
+    "identity": {
+        "type": "None"
+    }
+}

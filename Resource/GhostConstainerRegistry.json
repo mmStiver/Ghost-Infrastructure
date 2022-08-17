@@ -1,0 +1,31 @@
+{
+    "sku": {
+        "name": "Basic",
+        "tier": "Basic"
+    },
+    "type": "Microsoft.ContainerRegistry/registries",
+    "id": "/subscriptions/8be7da72-c54e-4327-8d12-477a21cc636f/resourceGroups/Ghost-Clus_group/providers/Microsoft.ContainerRegistry/registries/GhostConstainerRegistry",
+    "name": "GhostConstainerRegistry",
+    "location": "canadacentral",
+    "tags": {},
+    "properties": {
+        "loginServer": "ghostconstainerregistry.azurecr.io",
+        "creationDate": "2022-08-12T01:31:51.0591832Z",
+        "provisioningState": "Succeeded",
+        "adminUserEnabled": true,
+        "policies": {
+            "quarantinePolicy": {
+                "status": "disabled"
+            },
+            "trustPolicy": {
+                "type": "Notary",
+                "status": "disabled"
+            },
+            "retentionPolicy": {
+                "days": 7,
+                "lastUpdatedTime": "2022-08-12T01:31:52.207916+00:00",
+                "status": "disabled"
+            }
+        }
+    }
+}
